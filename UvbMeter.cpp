@@ -57,9 +57,6 @@ void UvbMeter::OnSetup()
 
   // Create a sprite
   sprite.createSprite(M5.Lcd.width(), M5.Lcd.height());
-
-  // For debug
-  Serial.begin(115200);
 }
 
 //! Called from loop() function
@@ -76,8 +73,6 @@ void UvbMeter::OnLoop()
   else {
     SetError(true);
   }
-
-  Serial.println(millis() - t0);
 
   // The following process is executed only once every 100 ms.
   while (millis() - t0 < 100) {
